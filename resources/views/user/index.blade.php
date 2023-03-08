@@ -23,23 +23,24 @@
                   </tr>
             </thead>
             <tbody>
+                @foreach ($users as $user)
                 <tr>
                     <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
+                    <td>{{ $user->Documento }}</td>
                   </tr>
                   <tr>
                     <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
+                    <td>{{ $user->Nombre }}</td>
                   </tr>
                   <tr>
-                    <th scope="row">3</th>
-                    <td colspan="2">Larry the Bird</td>
-                    <td>@twitter</td>
+                    <th scope="row">2</th>
+                    <td>{{ $user->Celular }}</td>
                   </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>{{ $user->Email }}</td>
+                  </tr>
+                  @endforeach
             </tbody>
           </table>
 

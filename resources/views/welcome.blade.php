@@ -13,7 +13,7 @@
 
 
 
-
+<a href="{{route('users.index')}}">User</a>
 
 
 
