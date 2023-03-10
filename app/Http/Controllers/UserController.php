@@ -15,7 +15,7 @@ class UserController extends Controller
         return view(
             'user.index',
             [
-                'users' => User::with('Users')->latest()->get()
+                'users' => User::all()
             ]
         );
     }
@@ -25,7 +25,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        return view('user.create');
     }
 
     /**
@@ -63,8 +63,10 @@ class UserController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(User $id)
     {
-        //
+        $id->delete();
+
+        return redirect()->route('users.index');
     }
 }
