@@ -17,7 +17,6 @@ return new class extends Migration
             $table->string('nombre');
             $table->string('celular');
             $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
             $table->timestamps();
         });
     }

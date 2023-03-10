@@ -19,8 +19,8 @@
     <div class="p-5 ">
         <table class="table table-striped position-sticky">
             <div class="justify-content-right">
-            <a class="btn btn-outline-secondary" href="{{ route('users.create') }}">Crear Usuario</a>
-        </div>
+                <a class="btn btn-outline-secondary" href="{{ route('users.create') }}">Crear Usuario</a>
+            </div>
             <thead>
                 <tr>
                     <th class="text-center"># Documento</th>
@@ -44,15 +44,15 @@
 
                         <form action="{{ route('users.destroy', $user) }}" method="POST">
 
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="btn btn-outline-danger" href="">Eliminar</button>
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-outline-danger" href="">Eliminar</button>
 
                         </form>
 
                     </td>
 
-                    <td class="text-center"><a class="btn btn-outline-primary" href="">Actualizar</a></td>
+                    <td class="text-center"><a class="btn btn-outline-primary" href="{{ route('users.edit', $user) }}">Actualizar</a></td>
 
                 </tr>
                 @endforeach

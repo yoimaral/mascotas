@@ -21,14 +21,16 @@
             <div class="col-md-7">
 
 
-                <form method="POST" action="{{ route('users.store') }}">
+                <form method="POST" action="{{ route('users.update', $user) }}">
 
                     @csrf
+                    @method('PATCH')
+
                     <div class="mb-3 row">
                         <label for="documento" class="form-label">Documento</label>
 
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="documento" name="documento">
+                            <input disabled value="{{ $user->documento }}" type="text" class="form-control" id="documento" name="documento">
                         </div>
                     </div>
 
@@ -37,7 +39,7 @@
                         <label for="nombre" class="form-label">Nombre</label>
 
                         <div class="col-sm-10">
-                            <input type="nombre" class="form-control" id="nombre" name="nombre">
+                            <input value="{{ $user->nombre }}" type="nombre" class="form-control" id="nombre" name="nombre">
                         </div>
 
                     </div>
@@ -47,18 +49,17 @@
                         <label for="celular" class="form-label">Celular</label>
 
                         <div class="col-sm-10">
-                            <input type="celular" class="form-control" id="celular" name="celular">
+                            <input value="{{ $user->celular }}" type="celular" class="form-control" id="celular" name="celular">
                         </div>
 
                     </div>
-
 
 
                     <div class="mb-3 row">
                         <label for="email" class="form-label">Email</label>
 
                         <div class="col-sm-10">
-                            <input type="email" class="form-control" id="email" name="email">
+                            <input value="{{ $user->email }}" type="email" class="form-control" id="email" name="email">
                         </div>
 
                     </div>
@@ -68,7 +69,7 @@
 
                         <button type="submit" class="btn btn-primary">
 
-                            Create
+                            Actualizar
 
                         </button>
 

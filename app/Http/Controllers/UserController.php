@@ -31,9 +31,16 @@ class UserController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(User $user, Request $request)
     {
-        //
+        $user->documento = $request->documento;
+        $user->nombre = $request->nombre;
+        $user->celular = $request->celular;
+        $user->email = $request->email;
+        $user->save();
+
+
+        return redirect()->route('users.index');
     }
 
     /**
@@ -47,25 +54,32 @@ class UserController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(User $user)
     {
-        //
+        return view('user.edit', compact('user'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, User $user)
     {
-        //
+        $user->update([
+            'nombre' => $request->nombre,
+            'celular' => $request->celular,
+            'email' => $request->email
+
+        ]);
+
+        return redirect()->route('users.index');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(User $id)
+    public function destroy(User $user)
     {
-        $id->delete();
+        $user->delete();
 
         return redirect()->route('users.index');
     }
