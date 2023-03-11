@@ -15,7 +15,7 @@
 
 <a href="{{route('users.index')}}">User</a>
 
-
+<a href="{{route('pet.index')}}">Pets</a>
 
 
 

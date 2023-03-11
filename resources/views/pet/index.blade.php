@@ -13,20 +13,22 @@
 
 <body>
 
-    <h1 class="text-center">Información de usuarios</h1>
+    <h1 class="text-center">Información De Animales</h1>
 
 
     <div class="p-5 ">
         <table class="table table-striped position-sticky">
+
             <div class="justify-content-right">
-                <a class="btn btn-outline-secondary" href="{{ route('pet.create') }}">Crear Usuario</a>
+                <a class="btn btn-outline-secondary" href="{{ route('pet.create') }}">Crear animal</a>
             </div>
+
+
             <thead>
                 <tr>
-                    <th class="text-center"># Documento</th>
-                    <th class="text-center">Nombre y Apellido</th>
-                    <th class="text-center">Celular</th>
-                    <th class="text-center">Email</th>
+                    <th class="text-center">Tipo</th>
+                    <th class="text-center">Nombre</th>
+                    <th class="text-center">Identificador</th>
                     <th class="text-center">Eliminar</th>
                     <th class="text-center">Actualizar</th>
 
@@ -36,19 +38,18 @@
                 @foreach ($pets as $pet)
                 <tr>
 
-                    <td class="text-center align-middle">{{ $pet->documento }}</td>
+                    <td class="text-center align-middle">{{ $pet->tipo }}</td>
                     <td class="text-center align-middle">{{ $pet->nombre }}</td>
-                    <td class="text-center align-middle">{{ $pet->celular }}</td>
-                    <td class="text-center align-middle">{{ $pet->email }}</td>
+                    <td class="text-center align-middle">{{ $pet->identificador }}</td>
+
                     <td class="text-center">
+                    <form action="{{ route('pet.destroy', $pet) }}" method="POST">
 
-                        <form action="{{ route('pet.destroy', $pet) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-outline-danger" href="">Eliminar</button>
 
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="btn btn-outline-danger" href="">Eliminar</button>
-
-                        </form>
+                    </form>
 
                     </td>
 

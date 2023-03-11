@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Pet;
 use Illuminate\Http\Request;
 
 class PetsController extends Controller
@@ -11,7 +12,12 @@ class PetsController extends Controller
      */
     public function index()
     {
-        //
+        return view(
+            'pet.index',
+            [
+                'pets' => Pet::all()
+            ]
+        );
     }
 
     /**
@@ -19,23 +25,28 @@ class PetsController extends Controller
      */
     public function create()
     {
-        //
+        return view('pet.create');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Pet $pet, Request $request)
     {
-        //
+        $pet->tipo = $request->tipo;
+        $pet->nombre = $request->nombre;
+        $pet->identificador = $request->identificador;
+
+        $pet->save();
+
+        return  redirect()->route('pet.index');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Request $request)
     {
-        //
     }
 
     /**

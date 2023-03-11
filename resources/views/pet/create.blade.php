@@ -14,7 +14,7 @@
 
 <body>
 
-    <h1 class="text-center">Crear Usuario</h1>
+    <h1 class="text-center">Crear Mascotas</h1>
 
     <div class="container">
         <div class="row justify-content-center">
