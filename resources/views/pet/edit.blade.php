@@ -27,11 +27,11 @@
                     @method('PATCH')
 
                     <div class="mb-3 row">
-                        <label for="documento" class="form-label">Documento</label>
+                        <label for="tipo" class="form-label">Tipo</label>
 
                         <div class="col-sm-10">
-                            <input disabled value="{{ $pet->documento }}" type="text" class="form-control"
-                                id="documento" name="documento">
+                            <input value="{{ $pet->tipo }}" type="text" class="form-control"
+                                id="tipo" name="tipo">
                         </div>
                     </div>
 
@@ -48,21 +48,11 @@
 
 
                     <div class="mb-3 row">
-                        <label for="celular" class="form-label">Celular</label>
+                        <label for="identi" class="form-label">Identificador</label>
 
                         <div class="col-sm-10">
-                            <input value="{{ $pet->celular }}" type="celular" class="form-control" id="celular"
-                                name="celular">
-                        </div>
-
-                    </div>
-
-
-                    <div class="mb-3 row">
-                        <label for="email" class="form-label">Email</label>
-
-                        <div class="col-sm-10">
-                            <input value="{{ $pet->email }}" type="email" class="form-control" id="email" name="email">
+                            <input disabled value="{{ $pet->identi }}" type="identi" class="form-control" id="identi"
+                                name="identi">
                         </div>
 
                     </div>

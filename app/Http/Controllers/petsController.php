@@ -35,7 +35,7 @@ class PetsController extends Controller
     {
         $pet->tipo = $request->tipo;
         $pet->nombre = $request->nombre;
-        $pet->identificador = $request->identificador;
+        $pet->identi = $request->identi;
 
         $pet->save();
 
@@ -52,9 +52,9 @@ class PetsController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Pet $pet)
     {
-        //
+        return view('pet.edit', compact('pet'));
     }
 
     /**

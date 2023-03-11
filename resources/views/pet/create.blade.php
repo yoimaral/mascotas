@@ -44,10 +44,10 @@
 
 
                     <div class="mb-3 row">
-                        <label for="identificador" class="form-label">Identificador</label>
+                        <label for="identi" class="form-label">Identificador</label>
 
                         <div class="col-sm-10">
-                            <input type="identificador" class="form-control" id="identificador" name="identificador">
+                            <input type="identi" class="form-control" id="identi" name="identi">
                         </div>
 
                     </div>
