@@ -14,16 +14,63 @@
 
 <body>
 
+    <h1 class="text-center">Crear agenda</h1>
+
     <div class="container">
-        <div class="col-md-6 ">
-            <a class="btn btn-outline-primary" href="{{route('users.index')}}">User</a>
+        <div class="row justify-content-center">
+            <div class="col-md-7">
 
-            <a class="btn btn-outline-primary" href="{{route('pet.index')}}">Pets</a>
 
-            <a class="btn btn-outline-primary" href="{{route('agen.index')}}">Agenda</a>
+                <form method="POST" action="{{ route('agen.store') }}">
 
+                    @csrf
+
+
+
+                    <div class="col-md-4 ">
+
+                        <button type="submit" class="btn btn-primary">
+
+                            Create
+
+                        </button>
+
+
+                        <a type="submit" class="btn btn-primary" href="{{ route('agen.index') }}">
+
+                            Volver
+                        </a>
+                    </div>
+
+
+
+                </form>
+
+
+
+            </div>
         </div>
+
     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AgendaUserPetsController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PetsController;
 use Illuminate\Support\Facades\Route;
@@ -19,6 +20,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::resource('/agen', AgendaUserPetsController::class);
 
 Route::resource('/users', UserController::class);
 

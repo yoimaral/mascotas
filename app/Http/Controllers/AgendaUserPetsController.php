@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Agendauserspet;
 use Illuminate\Http\Request;
 
 class AgendaUserPetsController extends Controller
@@ -11,7 +12,12 @@ class AgendaUserPetsController extends Controller
      */
     public function index()
     {
-        //
+        return view(
+            'agenda.index',
+            [
+                'agen' => Agendauserspet::all()
+            ]
+        );
     }
 
     /**
@@ -19,7 +25,7 @@ class AgendaUserPetsController extends Controller
      */
     public function create()
     {
-        //
+        return view('agenda.create');
     }
 
     /**
@@ -57,8 +63,10 @@ class AgendaUserPetsController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Agendauserspet $agen)
     {
-        //
+        $agen->delete();
+
+        return redirect()->route('agenda.index');
     }
 }

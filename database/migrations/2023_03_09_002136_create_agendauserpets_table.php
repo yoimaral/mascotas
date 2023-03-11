@@ -11,9 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('agenda_user_pets', function (Blueprint $table) {
+        Schema::create('agendauserspets', function (Blueprint $table) {
             $table->id();
-            $table->integer('fecha');
+            $table->char('fecha');
             $table->integer('idPets');
             $table->integer('idUsers');
             $table->timestamps();

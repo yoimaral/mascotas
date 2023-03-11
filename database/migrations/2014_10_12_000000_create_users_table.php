@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('nombre');
             $table->string('celular');
             $table->string('email')->unique();
+            $table->integer('idUser');
             $table->timestamps();
         });
     }
