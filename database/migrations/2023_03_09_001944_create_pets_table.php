@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->integer('tipo');
             $table->integer('nombre');
-            $table->integer('numeroPets');
+            $table->integer('identificador');
             $table->timestamps();
         });
     }

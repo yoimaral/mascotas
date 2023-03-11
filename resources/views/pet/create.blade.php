@@ -21,17 +21,14 @@
             <div class="col-md-7">
 
 
-                <form method="POST" action="{{ route('users.update', $user) }}">
+                <form method="POST" action="{{ route('pet.store') }}">
 
                     @csrf
-                    @method('PATCH')
-
                     <div class="mb-3 row">
-                        <label for="documento" class="form-label">Documento</label>
+                        <label for="tipo" class="form-label">Tipo</label>
 
                         <div class="col-sm-10">
-                            <input disabled value="{{ $user->documento }}" type="text" class="form-control"
-                                id="documento" name="documento">
+                            <input type="text" class="form-control" id="tipo" name="tipo">
                         </div>
                     </div>
 
@@ -40,29 +37,17 @@
                         <label for="nombre" class="form-label">Nombre</label>
 
                         <div class="col-sm-10">
-                            <input value="{{ $user->nombre }}" type="nombre" class="form-control" id="nombre"
-                                name="nombre">
+                            <input type="nombre" class="form-control" id="nombre" name="nombre">
                         </div>
 
                     </div>
 
 
                     <div class="mb-3 row">
-                        <label for="celular" class="form-label">Celular</label>
+                        <label for="identificador" class="form-label">Identificador</label>
 
                         <div class="col-sm-10">
-                            <input value="{{ $user->celular }}" type="celular" class="form-control" id="celular"
-                                name="celular">
-                        </div>
-
-                    </div>
-
-
-                    <div class="mb-3 row">
-                        <label for="email" class="form-label">Email</label>
-
-                        <div class="col-sm-10">
-                            <input value="{{ $user->email }}" type="email" class="form-control" id="email" name="email">
+                            <input type="identificador" class="form-control" id="identificador" name="identificador">
                         </div>
 
                     </div>
@@ -72,12 +57,12 @@
 
                         <button type="submit" class="btn btn-primary">
 
-                            Actualizar
+                            Create
 
                         </button>
 
 
-                        <a type="submit" class="btn btn-primary" href="{{ route('users.index') }}">
+                        <a type="submit" class="btn btn-primary" href="{{ route('pet.index') }}">
 
                             Volver
                         </a>

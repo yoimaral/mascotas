@@ -13,6 +13,6 @@ class Pets extends Model
     protected $fillable = [
         'tipo',
         'nombre',
-        'numeroPets',
+        'identificador',
     ];
 }
