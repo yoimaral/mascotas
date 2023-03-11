@@ -40,7 +40,7 @@
 
                     <td class="text-center align-middle">{{ $pet->tipo }}</td>
                     <td class="text-center align-middle">{{ $pet->nombre }}</td>
-                    <td class="text-center align-middle">{{ $pet->identificador }}</td>
+                    <td class="text-center align-middle">{{ $pet->identi }}</td>
 
                     <td class="text-center">
                     <form action="{{ route('pet.destroy', $pet) }}" method="POST">

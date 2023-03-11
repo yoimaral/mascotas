@@ -60,9 +60,15 @@ class PetsController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Pet $pet)
     {
-        //
+        $pet->update([
+            'tipo' => $request->tipo,
+            'nombre' => $request->nombre
+
+        ]);
+
+        return redirect()->route('pet.index');
     }
 
     /**
